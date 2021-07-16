@@ -1,0 +1,22 @@
+{
+  "name": "web_pro",
+  "version": "1.0.0",
+  "description": "웹개발 능력 증진 프로젝트",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/RyeinKim/web_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyeinKim/web_project/issues"
+  },
+  "homepage": "https://github.com/RyeinKim/web_project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

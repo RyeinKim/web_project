@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lnag="ko">
+  <head>
+      <meta charset="UTF-8">
+      <title>회원가입</title>
+      <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="header">
+      <div id="wrapper">
+        <div id="content">
+
+          <div>
+            <h3>
+              <label for="name">이름</label>
+            </h3>
+            <span class="box">
+              <input type="text" id="name" class="int" maxlength="20">
+            </span>
+            <span class="error_next_box"></span>
+          </div>
+
+          <div>
+            <h3>
+              <label for="email">이메일</label>
+            </h3>
+            <span class="box int_email">
+              <input type="text" id="email" class="int" maxlength="20">
+            </span>
+            <span class="error_next_box"></span>
+          </div>
+
+          <div>
+            <h3>
+              <label for="pw">비밀번호</label>
+            </h3>
+            <span class="box int_pass">
+              <input type="password" id="pw" class="int" maxlength="20">
+            </span>
+            <span class="error_next_box"></span>
+          </div>
+
+          <div>
+            <h3>
+              <label for="pwcheck">비밀번호 확인</label>
+            </h3>
+            <span class="box int_pass">
+              <input type="password" id="pwcheck" class="int" maxlength="20">
+            </span>
+            <span class="error_next_box"></span>
+          </div>
+
+          <div class="btn_area">
+          	<input type="button" id="register" value="가입하기">
+          	</input>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const register = document.getElementById("register");
+
+      register.addEventListener('click', function() {
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+  			const pw1 = document.getElementById('pw');
+  			const pwcheck = document.getElementById('pwcheck');
+
+
+        if (name.value == '') {
+          alert("이름 공백 X");
+          name.focus();
+        }
+        else if (email.value == '') {
+          alert("이메일 공백 X");
+          email.focus();
+        }
+        else if (pw.value !== pwcheck.value) {
+          alert("패스워드 일치하지 않음");
+          pw.focus();
+          pwcheck.focus();
+        }
+        else { alert("성공적으로 가입 완료!"); }
+      });
+    </script>
+    <script type="text/javascript">
+      // mysql 모듈 사용
+      const mysql = require('mysql');
+
+      // 연결할 DB 정보입력
+      const connection = mysql.createConnection({
+      host: 'reignking.cafe24app.com',
+      user: 'ryein6896',
+      password: 'djaak4250',
+      database: 'ryein6896',
+      port: '3306',
+      });
+
+      // 데이터베이스 연결
+      connection.connect();
+      // 연결 종료
+      connection.end();
+    </script>
+  </body>
+</html>
